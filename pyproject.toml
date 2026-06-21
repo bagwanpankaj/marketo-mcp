@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "marketo-mcp"
+version = "0.1.0"
+description = "Model Context Protocol server for the Marketo REST API"
+readme = "README.md"
+authors = [
+    { name = "Pankaj Baagwan", email = "bagwanpankaj@gmail.com" }
+]
+requires-python = ">=3.10"
+dependencies = [
+  "httpx>=0.27.0",
+  "mcp>=1.2.0",
+]
+
+[project.scripts]
+marketo-mcp = "marketo_mcp.server:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
